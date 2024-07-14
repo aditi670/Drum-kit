@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Noto+Music&display=swap" rel="stylesheet">
+    <style>h1 {
+        font-family: "Luckiest Guy", cursive;
+        font-weight: 900;
+        font-style: normal;
+        font-size:45px;
+        color:#059212;
+      }
+      .container{
+        width:80%;
+        text-align: center;
+        length:80%;
+        margin-left:70px;
+        margin-top: 70px;
+       
+        
+      }
+      .content{
+        display:flex;
+        justify-content: center;
+        padding:100px;
+        float:left;
+        
+      }
+      img{
+       
+        border-radius:40px 10px;
+        
+      }
+      .element{
+        outline: none;
+  border: 10px solid #536940;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 200;
+  color: #04da56;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+      }
+      body{
+        background-color:#F3FF90;
+      }
+
+      .a{
+        background-image: url("crash.png");
+      }
+
+      .b{
+        background-image: url("kick.png");
+      }
+
+      .c{
+        background-image: url("snare.png");
+      }
+
+      .d{
+        background-image: url("tom1.png");
+      }
+
+      .e{
+        background-image: url("tom2.png");
+      }
+
+      .f{
+        background-image: url("tom3.png");
+      }
+      
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 >Ready to play</h1>
+        <div class="content">
+            <button class="a element" >1</button>
+
+            <button class="b element" >
+                2</button>
+
+               
+               
+
+                    <button  class="c element" >
+                        3</button>
+
+                        <button  class="d element" >
+                            4</button>
+                            
+                            <button  class="e element">
+                                5</button>
+                                <button  class="f element" >
+                                    6</button>
+        </div>
+    </div>
+    <script>
+      let len= document.querySelectorAll(".element").length;
+        for(let i=0;i<len;i++)
+        {
+        document.querySelectorAll(".element")[i].addEventListener("click", function() {
+            let sd=this.innerText.trim();
+              makesound(sd);
+        });
+       }
+
+            function makesound(key)
+            {
+              switch(key){
+                case "1":
+                  var audio1=new Audio("crash.mp3");
+                audio1.play();
+
+                break;
+                case "2":
+                  let audio2=new Audio('kick-bass.mp3');
+                audio2.play();
+                break;
+
+                case "3":let audio3=new Audio('tom-1.mp3');
+                audio3.play();
+                break;
+
+                case "4":let audio4=new Audio('tom-2.mp3');
+                audio4.play();
+                break;
+
+                case "5":let audio5=new Audio('tom-3.mp3');
+                audio5.play();
+                break;
+
+                case "6":let audio6=new Audio('tom-4.mp3');
+                audio6.play();
+                break;
+
+                default:console.log("not done");
+
+            }
+          }
+
+        
+
+        
+      
+    document.addEventListener("keypress",function(event){
+      makesound(event.key);
+    })
+    </script>
+</body>
+</html>
